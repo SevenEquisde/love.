@@ -1,0 +1,20 @@
+[
+  {
+    "id": "vale_cena_01",
+    "titulo": "Salir a comer",
+    "descripcion": "Válido para salir a comer donde querrás, yo pago jskjskjs",
+    "icono": "restaurant"
+  },
+  {
+    "id": "vale_barbie_01",
+    "titulo": "Barbie",
+    "descripcion": "valido para ver barbie en la siguiente ocasión que vengas a mi casa",
+    "icono": "movie"
+  },
+  {
+    "id": "vale_razon_01",
+    "titulo": "Razón Absoluta",
+    "descripcion": "Válido para tener la razón en una mini discusión -n-",
+    "icono": "gavel"
+  }
+]
