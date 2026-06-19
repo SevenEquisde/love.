@@ -128,7 +128,7 @@ class _PantallaValesState extends State<PantallaVales> {
       children: [
         Scaffold(
           appBar: AppBar(
-            title: const Text('Para mi niña ❤️', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
+            title: const Text('Para mi niña', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
             centerTitle: true,
             backgroundColor: Theme.of(context).colorScheme.primary,
           ),
