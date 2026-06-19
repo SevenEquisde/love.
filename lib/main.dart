@@ -28,7 +28,7 @@ class AppRegalo extends StatelessWidget {
   }
 }
 
-// Nuestro modelo de datos
+// modelo para guardar los datos de cada cupon juas juas
 class Cupon {
   final String id;
   final String titulo;
@@ -106,7 +106,7 @@ class _PantallaValesState extends State<PantallaVales> {
       case 'restaurant': return Icons.restaurant_rounded;
       case 'movie': return Icons.movie_rounded;
       case 'gavel': return Icons.gavel_rounded;
-      case 'spa': return Icons.spa_rounded;
+      case 'heart': return Icons.heart_broken_rounded;
       default: return Icons.card_giftcard_rounded;
     }
   }

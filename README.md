@@ -1,6 +1,6 @@
 # love
 
-A new Flutter project.
+hola, este es mi proyecto para aplicacion móvil.
 
 ## Getting Started
 

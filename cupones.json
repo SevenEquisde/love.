@@ -16,5 +16,12 @@
     "titulo": "Razón Absoluta",
     "descripcion": "Válido para tener la razón en una mini discusión -n-",
     "icono": "gavel"
+  },
+  {
+    "id": "vale_besitos_01",
+    "titulo": "Besitos",
+    "descripcion": "Válido para recibir muchos besitos",
+    "icono": "heart"
   }
+
 ]
