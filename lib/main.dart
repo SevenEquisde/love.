@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:confetti/confetti.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 void main() {
   runApp(const AppRegalo());
@@ -44,21 +46,19 @@ class PantallaVales extends StatefulWidget {
 }
 
 class _PantallaValesState extends State<PantallaVales> {
-  // Datos hardcodeados temporalmente para trabajar puro Frontend
-  final List<Cupon> _listaCupones = [
-    Cupon(id: '001', titulo: 'Cena', descripcion: 'Válido para una cena.', icono: Icons.restaurant_rounded),
-    Cupon(id: '002', titulo: 'Tarde de Pelis', descripcion: 'Tú eliges qué vemos. Prohibido dormirse.', icono: Icons.movie_rounded),
-    Cupon(id: '003', titulo: 'Razón Absoluta', descripcion: 'Válido para tener la razón en una mini discusión.', icono: Icons.gavel_rounded),
-  ];
+  
+  final String _urlJson = 'https://raw.githubusercontent.com/SevenEquisde/love./refs/heads/main/cupones.json';
 
+  List<Cupon> _listaCupones = [];
   List<String> _idsCanjeados = [];
+  bool _cargando = true; 
   late ConfettiController _controladorConfeti;
 
   @override
   void initState() {
     super.initState();
     _controladorConfeti = ConfettiController(duration: const Duration(seconds: 2));
-    _cargarCuponesUsados();
+    _inicializarApp();
   }
 
   @override
@@ -67,12 +67,48 @@ class _PantallaValesState extends State<PantallaVales> {
     super.dispose();
   }
 
-  // Leer memoria local
-  Future<void> _cargarCuponesUsados() async {
+  // Función que carga la memoria local y descarga los cupones de internet
+  Future<void> _inicializarApp() async {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
       _idsCanjeados = prefs.getStringList('cupones_usados') ?? [];
     });
+
+    try {
+      final respuesta = await http.get(Uri.parse(_urlJson));
+      
+      if (respuesta.statusCode == 200) {
+        // Si responde bien, decodificamos el texto a una lista
+        final List<dynamic> datosJson = json.decode(respuesta.body);
+        
+        setState(() {
+          _listaCupones = datosJson.map((json) => Cupon(
+            id: json['id'],
+            titulo: json['titulo'],
+            descripcion: json['descripcion'],
+            icono: _obtenerIcono(json['icono']),
+          )).toList();
+          _cargando = false;
+        });
+      }
+    } catch (e) {
+      // Si no hay internet o falla el link
+      setState(() {
+        _cargando = false;
+      });
+      debugPrint('Error cargando JSON: $e');
+    }
+  }
+
+  // Traductor de texto a icono de Flutter
+  IconData _obtenerIcono(String nombreIcono) {
+    switch (nombreIcono) {
+      case 'restaurant': return Icons.restaurant_rounded;
+      case 'movie': return Icons.movie_rounded;
+      case 'gavel': return Icons.gavel_rounded;
+      case 'spa': return Icons.spa_rounded;
+      default: return Icons.card_giftcard_rounded;
+    }
   }
 
   // Guardar en memoria local y festejar
@@ -92,22 +128,24 @@ class _PantallaValesState extends State<PantallaVales> {
       children: [
         Scaffold(
           appBar: AppBar(
-            title: const Text('Para mi niña', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
+            title: const Text('Para mi niña ❤️', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
             centerTitle: true,
             backgroundColor: Theme.of(context).colorScheme.primary,
           ),
-          body: ListView.builder(
-            padding: const EdgeInsets.all(16),
-            itemCount: _listaCupones.length,
-            itemBuilder: (context, index) {
-              final cupon = _listaCupones[index];
-              final estaCanjeado = _idsCanjeados.contains(cupon.id);
+          // Si está cargando muestra la ruedita, si no, muestra la lista
+          body: _cargando 
+              ? const Center(child: CircularProgressIndicator()) 
+              : ListView.builder(
+                  padding: const EdgeInsets.all(16),
+                  itemCount: _listaCupones.length,
+                  itemBuilder: (context, index) {
+                    final cupon = _listaCupones[index];
+                    final estaCanjeado = _idsCanjeados.contains(cupon.id);
 
-              return _construirTarjeta(cupon, estaCanjeado, context);
-            },
-          ),
+                    return _construirTarjeta(cupon, estaCanjeado, context);
+                  },
+                ),
         ),
-        // ¡El confeti!
         ConfettiWidget(
           confettiController: _controladorConfeti,
           blastDirectionality: BlastDirectionality.explosive,
@@ -148,3 +186,4 @@ class _PantallaValesState extends State<PantallaVales> {
     );
   }
 }
+  
