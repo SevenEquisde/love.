@@ -1,6 +1,6 @@
 [
   {
-    "id": "vale_cena_02",
+    "id": "vale_cena_03",
     "titulo": "Salir a comer",
     "descripcion": "Válido para salir a comer donde querrás, yo pago jskjskjs",
     "icono": "restaurant"
@@ -12,13 +12,13 @@
     "icono": "movie"
   },
   {
-    "id": "vale_razon_02",
+    "id": "vale_razon_03",
     "titulo": "Razón Absoluta",
     "descripcion": "Válido para tener la razón en una mini discusión -n-",
     "icono": "gavel"
   },
   {
-    "id": "vale_besitos_02",
+    "id": "vale_besitos_03",
     "titulo": "Besitos",
     "descripcion": "Válido para recibir muchos besitos",
     "icono": "heart"
