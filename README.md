@@ -1,6 +1,6 @@
 # love
 
-hola, este es mi proyecto para aplicacion móvil.
+hola, este es mi proyecto para aplicacion móvil :D.
 
 ## Getting Started
 
