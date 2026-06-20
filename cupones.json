@@ -1,24 +1,24 @@
 [
   {
-    "id": "vale_cena_01",
+    "id": "vale_cena_02",
     "titulo": "Salir a comer",
     "descripcion": "Válido para salir a comer donde querrás, yo pago jskjskjs",
     "icono": "restaurant"
   },
   {
-    "id": "vale_barbie_01",
+    "id": "vale_barbie_02",
     "titulo": "Barbie",
     "descripcion": "valido para ver barbie en la siguiente ocasión que vengas a mi casa",
     "icono": "movie"
   },
   {
-    "id": "vale_razon_01",
+    "id": "vale_razon_02",
     "titulo": "Razón Absoluta",
     "descripcion": "Válido para tener la razón en una mini discusión -n-",
     "icono": "gavel"
   },
   {
-    "id": "vale_besitos_01",
+    "id": "vale_besitos_02",
     "titulo": "Besitos",
     "descripcion": "Válido para recibir muchos besitos",
     "icono": "heart"
