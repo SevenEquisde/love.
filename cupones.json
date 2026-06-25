@@ -22,6 +22,11 @@
     "titulo": "Besitos",
     "descripcion": "Válido para recibir muchos besitos",
     "icono": "heart"
+  },
+  { 
+    "id": "vale_estudio04",
+    "titulo": "Estudiar",
+    "descripcion": "Válido para estudiar juntos sin negarme",
+    "icono": "study"
   }
-
 ]
