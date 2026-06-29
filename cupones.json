@@ -1,38 +1,27 @@
 [
   {
-    "id": "vale_cena_05",
+    "id": "vale_cena_04",
     "titulo": "Salir a comer",
     "descripcion": "Válido para salir a comer donde querrás, yo pago jskjskjs",
     "icono": "restaurant"
   },
   {
-    "id": "vale_barbie_05",
+    "id": "vale_barbie_04",
     "titulo": "Barbie",
     "descripcion": "valido para ver barbie en la siguiente ocasión que vengas a mi casa",
     "icono": "movie"
   },
   {
-    "id": "vale_razon_05",
+    "id": "vale_razon_04",
     "titulo": "Razón Absoluta",
     "descripcion": "Válido para tener la razón en una mini discusión -n-",
     "icono": "gavel"
   },
   {
-    "id": "vale_besitos_05",
+    "id": "vale_besitos_04",
     "titulo": "Besitos",
     "descripcion": "Válido para recibir muchos besitos",
     "icono": "heart"
-  },
-  {
-  "id": "vale_estudio_05",
-    "titulo": "Estudiar",
-    "descripcion": "Válido para estudiar en caso de que me niegue",
-    "icono": "study"
-  },
-  {
-    "id": "vale_cuento_05",
-    "titulo": "Cuentico",
-    "descripcion": "Válido para que te narre un cuentico",
-    "icono": "history"
   }
+
 ]

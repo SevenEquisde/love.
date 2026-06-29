@@ -23,7 +23,7 @@ class AppRegalo extends StatelessWidget {
           background: const Color(0xFFFFF5F5),
         ),
       ),
-      home: const PantallaVales(),
+      home: const PantallaBienvenida(),
     );
   }
 }
@@ -106,7 +106,10 @@ class _PantallaValesState extends State<PantallaVales> {
       case 'restaurant': return Icons.restaurant_rounded;
       case 'movie': return Icons.movie_rounded;
       case 'gavel': return Icons.gavel_rounded;
-      case 'heart': return Icons.heart_broken_rounded;
+      case 'heart': return Icons.favorite_rounded;
+      case 'study': return Icons.book_rounded;
+      case 'history': return Icons.history_edu_rounded;
+
       default: return Icons.card_giftcard_rounded;
     }
   }
@@ -182,6 +185,89 @@ class _PantallaValesState extends State<PantallaVales> {
                   child: const Text('Usar'),
                 ),
         ),
+      ),
+    );
+  }
+}
+
+class PantallaBienvenida extends StatelessWidget {
+  const PantallaBienvenida({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: [
+          // Capa 1: Contenido central (Mensaje y Botón)
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // Un icono decorativo 
+                Icon(
+                  Icons.favorite_rounded,
+                  size: 100,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+                const SizedBox(height: 24),
+                const Text(
+                  '¡Sorpresa!',
+                  style: TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                const Text(
+                  'Algo especial para alguien especial',
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.black54,
+                  ),
+                ),
+                const SizedBox(height: 40),
+                
+                // Botón de Entrar
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Theme.of(context).colorScheme.primary,
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
+                    elevation: 4,
+                  ),
+                  onPressed: () {
+                    // Usamos pushReplacement para que si ella presiona el botón de "Atrás" 
+                    // en su celular, la app se cierre en lugar de volver a esta pantalla.
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const PantallaVales(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    'Entrar',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          
+          // Texto de la versión juas juas
+          const Positioned(
+            bottom: 16,
+            right: 16,
+            child: Text(
+              'Versión 1.1',
+              style: TextStyle(
+                color: Colors.grey,
+                fontWeight: FontWeight.bold,
+                fontSize: 12,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
