@@ -111,6 +111,8 @@ class _PantallaValesState extends State<PantallaVales> {
       case 'history': return Icons.history_edu_rounded;
       case 'foto': return Icons.photo_camera_rounded;
       case 'antojo': return Icons.fastfood_rounded;
+      case 'pregunta': return Icons.question_mark_rounded;
+      case 'mimos': return Icons.sentiment_very_satisfied_rounded;
       
 
       default: return Icons.card_giftcard_rounded;
@@ -222,7 +224,7 @@ class PantallaBienvenida extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 const Text(
-                  'Cupones para mi niña',
+                  'Cupones para mi niña <3',
                   style: TextStyle(
                     fontSize: 18,
                     color: Colors.black54,

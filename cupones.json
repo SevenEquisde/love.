@@ -46,6 +46,18 @@
     "titulo": "Antojito",
     "descripcion": "Valido para comprarte un antojito",
     "icono": "antojo"
+  },
+  {
+    "id": "vale_preguntas_05",
+    "titulo": "Preguntas",
+    "descripcion": "Valido para tiempo de preguntas (todas las que querrás) durante una semana",
+    "icono": "pregunta"
+  },
+  {
+    "id": "vale_mimos_05",
+    "titulo":"Mimos",
+    "descripcion":"Valido para darte mimos cuando estemos juntos",
+    "icono":"mimos"
   }
 
 ]
