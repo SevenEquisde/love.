@@ -2,7 +2,7 @@
   {
     "id": "vale_cena_05",
     "titulo": "Salir a comer",
-    "descripcion": "Válido para salir a comer donde querrás, yo pago jskjskjs",
+    "descripcion": "Válido para salir a comer donde querrás o pedir delivery, yo pago jskjskjs",
     "icono": "restaurant"
   },
   {
@@ -33,7 +33,19 @@
     "id": "vale_cuento_05",
     "titulo": "Cuentico",
     "descripcion": "Válido para narrarte un cuentico",
-    "icono": "book"
+    "icono": "history"
+  },
+  {
+    "id": "vale_fotito_05",
+    "titulo": "Fotito",
+    "descripcion": "Válido para fotitos de Junior",
+    "icono": "foto"
+  },
+  {
+    "id": "vale_antojito_05",
+    "titulo": "Antojito",
+    "descripcion": "Valido para comprarte un antojito",
+    "icono": "antojo"
   }
 
 ]

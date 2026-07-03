@@ -109,6 +109,9 @@ class _PantallaValesState extends State<PantallaVales> {
       case 'heart': return Icons.favorite_rounded;
       case 'study': return Icons.book_rounded;
       case 'history': return Icons.history_edu_rounded;
+      case 'foto': return Icons.photo_camera_rounded;
+      case 'antojo': return Icons.fastfood_rounded;
+      
 
       default: return Icons.card_giftcard_rounded;
     }
@@ -131,7 +134,7 @@ class _PantallaValesState extends State<PantallaVales> {
       children: [
         Scaffold(
           appBar: AppBar(
-            title: const Text('Para mi niña', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
+            title: const Text('Para Mabel', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
             centerTitle: true,
             backgroundColor: Theme.of(context).colorScheme.primary,
           ),
@@ -211,7 +214,7 @@ class PantallaBienvenida extends StatelessWidget {
                 ),
                 const SizedBox(height: 24),
                 const Text(
-                  '¡Sorpresa!',
+                  '¡Love!',
                   style: TextStyle(
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
@@ -219,7 +222,7 @@ class PantallaBienvenida extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 const Text(
-                  'Algo especial para alguien especial',
+                  'Cupones para mi niña',
                   style: TextStyle(
                     fontSize: 18,
                     color: Colors.black54,
