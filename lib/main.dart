@@ -4,6 +4,7 @@ import 'package:confetti/confetti.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
+
 void main() {
   runApp(const AppRegalo());
 }
@@ -127,6 +128,7 @@ class _PantallaValesState extends State<PantallaVales> {
     });
     await prefs.setStringList('cupones_usados', _idsCanjeados);
     _controladorConfeti.play();
+    _notificarDiscord(id);
   }
 
   @override
@@ -193,6 +195,25 @@ class _PantallaValesState extends State<PantallaVales> {
       ),
     );
   }
+
+  Future<void> _notificarDiscord(String nombreCupon) async {
+  // Pega aquí la URL larguísima que te dio Discord
+  final String urlWebhook = 'https://discord.com/api/webhooks/1522717142829498521/LWsGfvXUADRNiiw3_4gZ03JOkFh1iuXvPtBHK8kG0XTDDu0ttXwKcG4yU4DNMDDS9Wq5';
+
+  try {
+    await http.post(
+      Uri.parse(urlWebhook),
+      headers: {"Content-Type": "application/json"},
+      body: json.encode({
+        "content": "🚨 ¡Atención! Se acaba de canjear el cupón: **$nombreCupon**",
+        "username": "App Cupones", // El nombre que aparecerá en el chat
+        "avatar_url": "https://cdn-icons-png.flaticon.com/512/3209/3209971.png" 
+      }),
+    );
+  } catch (e) {
+    debugPrint('Error enviando el webhook: $e');
+  }
+}
 }
 
 class PantallaBienvenida extends StatelessWidget {
@@ -264,7 +285,7 @@ class PantallaBienvenida extends StatelessWidget {
             bottom: 16,
             right: 16,
             child: Text(
-              'Versión 1.1',
+              'Versión 1.0.2',
               style: TextStyle(
                 color: Colors.grey,
                 fontWeight: FontWeight.bold,
