@@ -1,63 +1,33 @@
 [
   {
-    "id": "vale_cena_05",
-    "titulo": "Salir a comer",
-    "descripcion": "Válido para salir a comer donde querrás o pedir delivery, yo pago jskjskjs",
+    "id": "vale_jugar_Axelito",
+    "titulo": "Axelito",
+    "descripcion": "Válido para jugar brawl con la poronga",
     "icono": "restaurant"
   },
   {
-    "id": "vale_barbie_05",
-    "titulo": "Barbie",
-    "descripcion": "valido para ver barbie en la siguiente ocasión que vengas a mi casa",
+    "id": "vale_jugar_Ismael",
+    "titulo": "Ismael",
+    "descripcion": "valido para jugar brawl a lo insano",
     "icono": "movie"
   },
   {
-    "id": "vale_razon_05",
-    "titulo": "Razón Absoluta",
-    "descripcion": "Válido para tener la razón en una mini discusión -n-",
+    "id": "vale_Discord",
+    "titulo": "Discord",
+    "descripcion": "Válido para conectarse a discord rapido",
     "icono": "gavel"
   },
   {
-    "id": "vale_besitos_05",
-    "titulo": "Besitos",
-    "descripcion": "Válido para recibir muchos besitos",
+    "id": "vale_focnigga",
+    "titulo": "focnigga",
+    "descripcion": "Válido para focnigga",
     "icono": "heart"
   },
   {
-    "id": "vale_estudio_05",
-    "titulo": "Estudiar",
-    "descripcion": "Válido para estudiar cuando me niegue",
+    "id": "vale_gang_battle",
+    "titulo": "gatitos",
+    "descripcion": "Válido para jugar al juego de los gatitos",
     "icono": "study"
-  },
-  {
-    "id": "vale_cuento_05",
-    "titulo": "Cuentico",
-    "descripcion": "Válido para narrarte un cuentico",
-    "icono": "history"
-  },
-  {
-    "id": "vale_fotito_05",
-    "titulo": "Fotito",
-    "descripcion": "Válido para fotitos de Junior",
-    "icono": "foto"
-  },
-  {
-    "id": "vale_antojito_05",
-    "titulo": "Antojito",
-    "descripcion": "Valido para comprarte un antojito",
-    "icono": "antojo"
-  },
-  {
-    "id": "vale_preguntas_05",
-    "titulo": "Preguntas",
-    "descripcion": "Valido para tiempo de preguntas (todas las que querrás) durante una semana",
-    "icono": "pregunta"
-  },
-  {
-    "id": "vale_mimos_05",
-    "titulo":"Mimos",
-    "descripcion":"Valido para darte mimos cuando estemos juntos",
-    "icono":"mimos"
   }
 
 ]
